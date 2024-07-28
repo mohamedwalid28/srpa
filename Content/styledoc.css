@@ -1,0 +1,937 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.buttons {
+  display: flex;
+}
+
+.button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #107869;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Header_right {
+  margin-left: auto;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+}
+
+.logoFooter {
+  width: 200px;
+  height: 200px;
+}
+
+.navigation {
+  background-color: #107869;
+  color: #ffffff;
+  padding: 10px;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  /* Align the links to the right */
+  align-items: center;
+}
+
+.navigation a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+  position: relative;
+}
+
+.navigation a:before {
+  content: '\2022';
+  color: #ffffff;
+  font-size: 20px;
+  margin-right: 5px;
+  position: absolute;
+  right: -15px;
+}
+
+.footer-container {
+  background-color: #107869;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-content p {
+  margin: 0 10px;
+}
+
+.footer-content a {
+  color: #9796f0;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+.calendarstyle {
+  margin-right: 16px;
+  display: flex;
+  padding: 8px 16px;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.footer_right {
+  margin-left: auto;
+  position: relative;
+  margin-bottom: 100%;
+}
+
+.footer-section {
+  /* flex: 1; Distribute available space equally among sections */
+  margin: 0 125px;
+  /* Adjusted the margin for better spacing */
+}
+
+/*======================================================================*/
+
+/*Create Account p2*/
+
+.create-account-p2-body {
+  background-color: #ffffff;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-account-p2-form {
+  background-color: #e0e0e0;
+  width: 500px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-account-p2-title {
+  color: #1a5653;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.create-account-p2-label {
+  display: block;
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create-account-p2-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.create-account-p2-password-input-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create-account-p2-password-toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.create-account-p2-submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #107869;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/*======================================================================*/
+
+/*AccountPriv page*/
+
+.accountpriv-body {
+  background-color: #ffffff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+
+}
+
+.profile-picture-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ccc;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.accountpriv-form {
+  background-color: #e0e0e0;
+  width: 500px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accountpriv-label {
+  display: block;
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.accountpriv-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.accountpriv-password-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.accountpriv-change-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: blue;
+}
+
+.accountpriv-submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #107869;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.accountpriv-save-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #107869;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+.accountpriv-back-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ccc;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.accountpriv-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*======================================================================*/
+
+/* Account Page */
+/* Account Page Container */
+.account-page-container {
+  background-color: #ffffff;
+  /* Keep the overall page background white */
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-page-add-research-button {
+  background-color: #107869;
+  /* Set button background color */
+  color: #ffffff;
+  /* Set text color */
+  border: none;
+  /* Remove border */
+  border-radius: 8px;
+  /* Apply border radius */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Apply box shadow */
+  margin-bottom: 20px;
+  /* Add margin between button and cards */
+  padding: 10px;
+  /* Apply padding */
+  width: 93.5%;
+  /* Make button occupy full width of container */
+  cursor: pointer;
+  /* Change cursor to pointer */
+}
+
+.account-page-add-research-button:hover {
+  background-color: #0d5d49;
+  /* Darken background color on hover */
+}
+
+/* Research Cards Container */
+.account-page-research-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  /* Adjust as needed */
+  background-color: #E0E0E0;
+  /* Set container background color */
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  /* Add margin between container and other content */
+}
+
+/* Research Card */
+.account-page-research-card {
+  display: flex;
+  background-color: #107869;
+  color: #ffffff;
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  /* Add margin between cards */
+  padding: 20px;
+  width: 90%;
+  /* Make cards occupy full width of container */
+}
+
+.account-page-research-card h3 {
+  margin: 0;
+}
+
+/* Notification Icon */
+.account-page-notification-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #ffffff;
+  margin-left: auto;
+  /* Align icon to the right */
+}
+
+/* Setting Gear Icon */
+.account-page-setting-gear-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #ffffff;
+  margin-left: 10px;
+  /* Add spacing between icons */
+}
+
+/* Profile Picture */
+.account-page-profile-picture {
+  width: 100px;
+  /* Adjust as needed */
+  height: 100px;
+  /* Adjust as needed */
+  border-radius: 50%;
+}
+
+/* Doctor Info */
+.account-page-doctor-info {
+  margin-bottom: 10px;
+}
+
+.account-page-head-setting-gear-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #696969;
+  margin-left: 10px;
+  /* Add spacing between icons */
+}
+
+/* Hyperlink */
+.account-page-grey-hyperlink {
+  color: #888;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+
+/*======================================================================*/
+/*Account Data*/
+/* Account Data Container */
+.account-data-container {
+  background-color: #ffffff;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Account Data Body */
+.account-data-body {
+  background-color: #ffffff;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Account Data Form */
+.account-data-form {
+  background-color: #e0e0e0;
+  width: 90%;
+  height: 55%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Account Data Label */
+.account-data-label {
+  display: block;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  padding-left: 78%;
+  text-align: right;
+}
+
+/* Account Data Input */
+.account-data-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  direction: rtl;
+
+}
+
+/* Account Data Input Container */
+.account-data-input-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-end;
+  direction: rtl;
+}
+
+.account-data-submit-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Account Data Submit Button */
+.account-data-submit-button {
+  width: 231px;
+  height: 65px;
+  padding: 10px;
+  background-color: #107869;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-right: 20px;
+  justify-content: space-between;
+
+}
+
+/* Account Data Input Group */
+.account-data-input-group {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  /* Adjust as needed */
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.account-data-input-group-address {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* Adjust as needed */
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  align-items: right;
+  direction: rtl;
+}
+
+/* Account Data Input Group Postal Code */
+.account-data-input-group-postalcode {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  /* Set to 50% for half the width of the container */
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  direction: rtl;
+  justify-content: flex-end;
+  /* Align to the bottom of the container */
+  text-align: right;
+  /* Align text to the right */
+  align-self: flex-start;
+  /* Align to the left side of the screen */
+}
+
+
+/* Popup container */
+.popup {
+  position: fixed;
+  /* Position the popup relative to the viewport */
+  top: 50%;
+  /* Center the popup vertically */
+  left: 50%;
+  /* Center the popup horizontally */
+  transform: translate(-50%, -50%);
+  /* Center the popup perfectly */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 999;
+  /* Ensure it appears on top of other elements */
+}
+
+/* Popup content */
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/*==========================================================================*/
+/* Add Research p1 */
+
+/* Add Research P1 Container */
+.add-research-p1-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+/* Add Research P1 Info */
+.add-research-p1-info {
+  margin-bottom: 30px;
+}
+
+.add-research-p1-info h2 {
+  margin-bottom: 10px;
+}
+
+.add-research-p1-field {
+  margin-bottom: 20px;
+}
+
+.add-research-p1-field label {
+  display: block;
+  font-weight: bold;
+}
+
+.add-research-p1-field input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Add Research P1 Photo */
+.add-research-p1-photo {
+  margin-top: 30px;
+}
+
+.add-research-p1-photo h2 {
+  margin-bottom: 10px;
+}
+
+.add-research-p1-photo input[type='file'] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Add Research P1 Button */
+.add-research-p1-button {
+  background-color: #107869;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  /* Remove default underline */
+  display: inline-block;
+  margin-top: 20px;
+  /* Adjust margin as needed */
+}
+
+
+/*======================================================================*/
+/*Add Research p2 */
+
+/* Add Research Page 2 Container */
+.add-research-p2-container {
+  direction: rtl;
+  background-color: #e0e0e0;
+  width: max-content;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-research-p2-container-h2 {
+  margin-left: 35%;
+  align-items: center;
+  color: #1A5653;
+}
+
+/* Add Research Page 2 Field */
+.add-research-p2-field {
+  margin-bottom: 20px;
+  width: fit-content;
+  /* Adjust width to fit content */
+}
+
+.add-research-p2-field label {
+  display: inline-block;
+  width: 200px;
+  /* Adjust width of labels */
+  margin-bottom: 5px;
+  color: #1A5653;
+  /* Set font color */
+}
+
+.add-research-p2-field input[type="text"],
+.add-research-p2-field input[type="date"],
+.add-research-p2-field input[type="number"],
+.add-research-p2-field select {
+  width: calc(160%);
+  /* Adjust width of input fields */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #FFFDFD;
+  color: #000;
+  /* Set font color */
+}
+
+.add-research-p2-field input[type="date"] {
+  width: calc(185%);
+  /* Adjust width of input fields */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #FFFDFD;
+  color: #000;
+  /* Set font color */
+}
+
+.add-research-p2-field input[type="radio"] {
+  margin-right: 1 px;
+}
+
+.button-container {
+  display: flex;
+  /* Use flexbox to align items */
+  justify-content: center;
+  /* Center the buttons horizontally */
+  margin-top: 20px;
+  /* Add margin to separate buttons from the form */
+
+  margin-bottom: 20px;
+}
+
+.add-research-p2-button {
+  padding: 10px 20px;
+  background-color: #107869;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 10px;
+  /* Add space between buttons */
+  width: 150px;
+  /* Adjust width of buttons */
+}
+
+.add-research-p2-button:hover {
+  background-color: #0d5c4b;
+}
+
+/*===================================================================================*/
+
+/* termsandconditions.css */
+
+/* Headlines */
+.termsandconditions-headline {
+  color: #1A5653;
+}
+
+/* Bullets and Text */
+.termsandconditions-bullet {
+  color: #696969;
+}
+
+/* Button */
+.termsandconditions-button {
+  background-color: #107869;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 10%;
+  margin: 0 auto; /* Center the button */
+  display: block; /* Make it a block element to center it */
+}
+
+/* Center-align text */
+.termsandconditions-text-center {
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+/* RTL direction */
+.termsandconditions-direction-rtl {
+  direction: rtl;
+}
+
+
+/*================================================================================================*/
+/* notificationpage.css */
+
+.notification-page-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.progress-bar-container {
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+}
+
+.progress-fill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 100px, 100px, 50px);
+  border-radius: 50%;
+  background-color: #1A5653;
+}
+
+.progress-text {
+  text-align: center;
+}
+
+
+
+/* Styles for progress bar circle */
+.progress-bar-circle {
+  fill: transparent;
+  stroke : #1A5653 ;
+  color: #1A5653;
+  fill: #FFFFFF;
+  
+}
+
+.progress-bar-circle-background {
+  fill: none;
+  stroke: #1A5653; /* Color for the outer circle */
+  stroke-width: 10; /* Thickness of the outer circle */
+}
+
+.progress-bar-circle-percentage {
+  fill: #1A5653; /* Color for the progress circle */
+}
+
+.progress-bar-circle-text {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  fill: #1A5653; /* Color for the percentage text */
+  text-anchor: middle;
+  /* dominant-baseline: central; */
+}
+.progress-percentage {
+  font-size: 12px; /* Adjust the font size as needed */
+}
+.notification-cards-container {
+  margin-top: 20px;
+    display: flex;
+  flex-direction: column;
+  width: 150%;
+  margin-right: auto;
+  align-items: center;
+  margin-bottom: 10%;
+  
+}
+
+
+.notification-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notification-time {
+  color: #1A5653;
+}
+
+.notification-text {
+  color: #333;
+}
+/* Styles for notification cards */
+.notification-card {
+  height: 100px; /* Set the height to 100px */
+  width: 65.5%;
+  margin-right: auto;
+  padding: 10px;
+  border: 1px solid #1A5653; /* Border color for the notification cards */
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Box shadow for the notification cards */
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+  
+  position: relative; /* Position relative for absolute positioning of text */
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Distribute space between children */
+  align-items: center; /* Center vertically */
+}
+
+.notification-card-text {
+  color: #1A5653; /* Color for the text in the notification cards */
+  position: absolute; /* Position absolute for text */
+  top: 50%; /* Align text vertically */
+  right: 10px; /* Align text to the right */
+  transform: translateY(-50%); /* Adjust for vertical alignment */
+}
+
+.notification-card-time {
+  color: #696969; /* Color for the time text in the notification cards */
+}
+
+.notification-card.first-card {
+  background-color: #107869;
+}
+
+

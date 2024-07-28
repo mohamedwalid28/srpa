@@ -1,0 +1,121 @@
+﻿body {
+}
+
+/* Account Page */
+/* Account Page Container */
+.account-page-container {
+    background-color: #ffffff;
+    /* Keep the overall page background white */
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-page-add-research-button {
+    background-color: #107869;
+    /* Set button background color */
+    color: #ffffff;
+    /* Set text color */
+    border: none;
+    /* Remove border */
+    border-radius: 8px;
+    /* Apply border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Apply box shadow */
+    margin-bottom: 20px;
+    /* Add margin between button and cards */
+    padding: 10px;
+    /* Apply padding */
+    width: 93.5%;
+    /* Make button occupy full width of container */
+    cursor: pointer;
+    /* Change cursor to pointer */
+}
+
+    .account-page-add-research-button:hover {
+        background-color: #0d5d49;
+        /* Darken background color on hover */
+    }
+
+/* Research Cards Container */
+.account-page-research-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    /* Adjust as needed */
+    background-color: #E0E0E0;
+    /* Set container background color */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    /* Add margin between container and other content */
+}
+
+/* Research Card */
+.account-page-research-card {
+    display: flex;
+    background-color: #107869;
+    color: #ffffff;
+    border-radius: 8px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    /* Add margin between cards */
+    padding: 20px;
+    width: 90%;
+    /* Make cards occupy full width of container */
+}
+
+    .account-page-research-card h3 {
+        margin: 0;
+    }
+
+/* Notification Icon */
+.account-page-notification-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+    margin-left: auto;
+    /* Align icon to the right */
+}
+
+/* Setting Gear Icon */
+.account-page-setting-gear-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+    margin-left: 10px;
+    /* Add spacing between icons */
+}
+
+/* Profile Picture */
+.account-page-profile-picture {
+    width: 100px;
+    /* Adjust as needed */
+    height: 100px;
+    /* Adjust as needed */
+    border-radius: 50%;
+}
+
+/* Doctor Info */
+.account-page-doctor-info {
+    margin-bottom: 10px;
+}
+
+.account-page-head-setting-gear-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: #696969;
+    margin-left: 10px;
+    /* Add spacing between icons */
+}
+
+/* Hyperlink */
+.account-page-grey-hyperlink {
+    color: #888;
+    text-decoration: none;
+    margin-top: 20px;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="443b3c59dead4b0e94de560d6149d000" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="ProjectModel.Admin" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Doctor" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Research" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Role" Width="1.5" PointX="3.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.UserRoleMapping" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Log_History" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Notification" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Res_parts" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <AssociationConnector Association="ProjectModel.FK_Log_History_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_Notifications_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_Log_History_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_Research_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_UserRoleMapping_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_Log_History_Research" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_Notifications_Research" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_Res_parts_Research" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_UserRoleMapping_Roles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

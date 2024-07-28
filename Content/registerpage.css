@@ -1,0 +1,120 @@
+﻿
+body {
+    font-family: Arial, sans-serif;
+}
+
+.registerpage_form {
+    background-Color: #E0E0E0;
+    width: 738px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.registerpage_form-container {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.registerpage_main-container {
+    background-color: #E0E0E0;
+    width: 738px;
+    /*    height: 100vh;
+*/ display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerpage_form-title {
+    color: #1A5653;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.registerpage_form-part {
+    display: none;
+    transition: opacity 0.5s;
+}
+
+.registerpage_active {
+    display: block;
+    opacity: 1;
+}
+
+.registerpage_hidden {
+    opacity: 0;
+}
+
+.registerpage_label {
+    display: block;
+    margin-bottom: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.registerpage_input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.registerpage_button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.registerpage_button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+    .registerpage_button:hover {
+        background-color: #45a049;
+    }
+
+.registerpage_validation-message {
+    color: red;
+    font-size: 12px;
+}
+
+/* Progress bar styling */
+.registerpage_progress-bar-container {
+    margin-top: 5%;
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.registerpage_progress-bar {
+    height: 20px;
+    width: 0;
+    background-color: #107869;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+    transition: width 0.5s;
+}
+
+.registerpage_div {
+    background-Color: #E0E0E0;
+    width: 500px;
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+

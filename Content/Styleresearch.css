@@ -1,0 +1,182 @@
+﻿.add-research-p1-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-left :25%;
+}
+
+/* Add Research P1 Info */
+.add-research-p1-info {
+    margin-bottom: 30px;
+}
+
+.add-research-p1_form {
+    background-Color: #E0E0E0;
+    width: 738px;
+    padding: 20px;
+    /*    border-radius: 8px;
+*/ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+    .add-research-p1-info h2 {
+        margin-bottom: 10px;
+    }
+
+.add-research-p1-field {
+    margin-bottom: 20px;
+}
+
+    .add-research-p1-field label {
+        display: block;
+        font-weight: bold;
+    }
+
+    .add-research-p1-field input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+/* Add Research P1 Photo */
+.add-research-p1-photo {
+    margin-top: 30px;
+}
+
+    .add-research-p1-photo h2 {
+        margin-bottom: 10px;
+    }
+
+    .add-research-p1-photo input[type='file'] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+/* Add Research P1 Button */
+.registerpage_button-container.add-research-p1-button {
+    background-color: #107869;
+    color: #107869;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    /* Remove default underline */
+    display: inline-block;
+    margin-top: 20px;
+}
+.add-research-p1-button {
+    background-color: #107869;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    /* Remove default underline */
+    display: inline-block;
+    margin-top: 20px;
+    /* Adjust margin as needed */
+}
+
+
+/*======================================================================*/
+/*Add Research p2 */
+
+/* Add Research Page 2 Container */
+.add-research-p2-container {
+    direction: rtl;
+    background-color: #e0e0e0;
+    width: max-content;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-research-p2-container-h2 {
+    margin-left: 35%;
+    align-items: center;
+    color: #1A5653;
+}
+
+/* Add Research Page 2 Field */
+.add-research-p2-field {
+    margin-bottom: 20px;
+    width: fit-content;
+    /* Adjust width to fit content */
+}
+
+    .add-research-p2-field label {
+        display: inline-block;
+        width: 200px;
+        /* Adjust width of labels */
+        margin-bottom: 5px;
+        color: #1A5653;
+        /* Set font color */
+    }
+
+    .add-research-p2-field input[type="text"],
+    .add-research-p2-field input[type="date"],
+    .add-research-p2-field input[type="number"],
+    .add-research-p2-field select {
+        width: calc(160%);
+        /* Adjust width of input fields */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #FFFDFD;
+        color: #000;
+        /* Set font color */
+    }
+
+    .add-research-p2-field input[type="date"] {
+        width: calc(185%);
+        /* Adjust width of input fields */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #FFFDFD;
+        color: #000;
+        /* Set font color */
+    }
+
+    .add-research-p2-field input[type="radio"] {
+        margin-right: 1 px;
+    }
+
+.button-container {
+    display: flex;
+    /* Use flexbox to align items */
+    justify-content: center;
+    /* Center the buttons horizontally */
+    margin-top: 20px;
+    /* Add margin to separate buttons from the form */
+
+    margin-bottom: 20px;
+}
+
+.add-research-p2-button {
+    padding: 10px 20px;
+    background-color: #107869;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 10px;
+    /* Add space between buttons */
+    width: 150px;
+    /* Adjust width of buttons */
+}
+
+    .add-research-p2-button:hover {
+        background-color: #0d5c4b;
+    }
