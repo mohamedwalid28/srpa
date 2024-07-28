@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Research Publication Awards</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/Style_layout.css">
+</head>
+<body>
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("Doctor"))
+        {
+            <div>
+                <div class="header-container">
+                    <div class="buttons">
+                        <button class="button">EN</button>
+                    </div>
+                    <div class="Header_right">
+                        <img class="logo" src="~/uploads/images/logo1.png" alt="KSU">
+                    </div>
+                </div>
+                <div class="navigation">
+                    <a href="#">اتصل بنا</a>
+                    <a href="#">للتقديم</a>
+                    <a href="Home/Index">الرئيسية</a>
+                    <a href="Account/logout">تسجيل الخروج</a>
+                </div>
+            </div>
+        }
+        else if (User.IsInRole("Admin"))
+        {
+            <div>
+                <div class="header-container">
+                    <div class="buttons">
+                        <button class="button">EN</button>
+                    </div>
+                    <div class="Header_right">
+                        <img class="logo" src="~/uploads/images/logo1.png" alt="KSU">
+                    </div>
+                </div>
+                <div class="navigation">
+                    <a href="#">اتصل بنا</a>
+                    <a href="#">للتقديم</a>
+                    <a href="Home/Index">الرئيسية</a>
+                    <a href="Account/logout">تسجيل الخروج</a>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div>
+            <div class="header-container">
+                <div class="buttons">
+                    <button class="button" id="enbtn">EN</button>
+                    <button class="button" onclick="redirectToRegister()" id="registerbtn">إنشاء حساب</button>
+                    <button class="button" id="loginbtn">تسجيل دخول</button>
+                </div>
+                <div class="Header_right">
+                    <img class="logo" src="~/uploads/images/logo1.png" alt="KSU">
+                </div>
+            </div>
+            <div class="navigation">
+                <a href="#">اتصل بنا</a>
+                <a href="#">للتقديم</a>
+                <a href="Home/Index">الرئيسية</a>
+                <!-- Add more navigation links as needed -->
+            </div>
+        </div>
+    }
+
+    @RenderBody()
+    
+    <br />
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Your Footer content goes here -->
+                <div class="footer-section">
+                    <!-- Calendar component -->
+                    <div id="calendar"></div>
+                </div>
+                <div class="footer-section">
+                    <p>Contact Us:</p>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+                <div class="footer-section">
+                    <!-- Your existing content -->
+                    <img class="logoFooter" src="~/uploads/images/FooterLogo.png" alt="KSU">
+                    <p>&copy; 2024 Your Company</p>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            // Attach click event handler to the logout button
+            $('#logoutButton').click(function () {
+                // Make an AJAX request to the Logout action method
+                $.ajax({
+                    url: '@Url.Action("Logout", "Account")', // URL of the Logout action method
+                    type: 'GET',
+                    success: function (data) {
+                        // Handle the success response (data) here
+                        console.log('Logout successful:', data);
+                        // Example: Redirect to the home page after logout
+                        window.location.href = '@Url.Action("Index", "Home")';
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle the error here
+                        console.error('Error occurred:', error);
+                    }
+                });
+            });
+
+            // Attach click event handler to the button for redirecting to Register
+            $('.button').click(function () {
+                if ($(this).attr('id') === 'enbtn') { // Replace with actual id
+
+                } else if ($(this).attr('id') === 'registerbtn') { // Replace with actual id
+                    redirectToLogin();
+                } else if ($(this).attr('id') === 'loginbtn') { // Replace with actual id
+                    redirectToLogin();
+                }
+            });
+        });
+
+        function redirectToRegister() {
+            window.location.href = '@Url.Action("Register", "Account")';
+        }
+
+                function redirectToLogin() {
+            window.location.href = '@Url.Action("login", "Account")';
+        }
+    </script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

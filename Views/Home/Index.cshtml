@@ -1,0 +1,84 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>جوائز النشر العلمي</title>
+    <link rel="stylesheet" href="~/Content/style_index.css">
+</head>
+<body>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    <div class="center">
+        <h1 class="headline">جوائز النشر العلمي</h1>
+        <div class="rounded-picture">
+            <img src="~/uploads/images/suits.jpg" class="rounded-picture" alt="suits" />
+        </div>
+        <div class="text-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis libero ut dui viverra laoreet vel ut sem.</p>
+        </div>
+    </div>
+
+    <div class="video-container">
+        @*<div class="video">
+                <img src="~/uploads/images/200pound.gif"  alt="Animated GIF">
+            </div>*@
+        <div class="overlay">
+            <div>
+                <h2>لتقديم البحث</h2>
+                <button class="redirect-button" onclick="window.location.hash = '#';">تقديم</button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <h2 class="important-instructions">تعليمات هامة:</h2>
+    <h3 class="subheadline">Subheadline</h3>
+    <ul class="instructions-list">
+        <li>Point 1</li>
+        <li>Point 2</li>
+        <li>Point 3</li>
+    </ul>
+
+    <div class="contact-us-line">
+        إتصل بنا
+
+        <br />
+    </div>
+    <div class="contact-icon">
+        <img src="location_icon.png" alt="Location Icon"> العنوان
+    </div>
+    <div class="contact-icon">
+        <img src="mail_icon.png" alt="Mail Icon"> البريد الإلكتروني
+    </div>
+    <div class="contact-icon">
+        <img src="phone_icon.png" alt="Phone Icon"> الهاتف
+    </div>
+
+
+    <div class="contact-form">
+        <!-- Your contact form code here -->
+    </div>
+
+    <div class="container">
+        <div class="rectangle">
+            <div class="ellipse"></div>
+        </div>
+        <div class="rectangle">
+            <div class="ellipse"></div>
+        </div>
+        <div class="rectangle">
+            <div class="ellipse"></div>
+        </div>
+    </div>
+
+</body>
+</html>

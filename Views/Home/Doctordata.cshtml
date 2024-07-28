@@ -1,0 +1,140 @@
+﻿@using SRPA.Models
+@model Doctor
+@{
+    ViewBag.Title = "Account Data";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/styledoc.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+
+    <div class="account-page account-page-profile-picture-container">
+        <img class="account-page-profile-picture" src="~/uploads/images/test.jpg" alt="Profile" />
+    </div>
+
+    <div class="account-page account-page-doctor-info">
+        <span>@Model.doc_name</span>
+        <i class="fas fa-cog account-page-head-setting-gear-icon" onclick="redirectToSettings()"></i>
+    </div>
+
+    <div class="account-page account-data-body">
+        @using (Html.BeginForm("AccountData", "Account", FormMethod.Post, new { id = "accountDataForm" }))
+        {
+            <div class="account-data-input-container">
+                <div class="account-data-input-group">
+                    <label class="account-data-label">الاسم:</label>
+                    @Html.TextBoxFor(m => m.doc_name, new { @class = "account-data-input", @readonly = "readonly" })
+                </div>
+                <div class="account-data-input-group">
+                    <label class="account-data-label">رقم التليفون:</label>
+                    @Html.TextBoxFor(m => m.doc_phoneno, new { @class = "account-data-input", @readonly = "readonly", @pattern = "\\d*" })
+                </div>
+            </div>
+
+            <div class="account-data-input-container">
+                <div class="account-data-input-group">
+                    <label class="account-data-label">الرقم القومي:</label>
+                    @Html.TextBoxFor(m => m.doc_nid, new { @class = "account-data-input", @readonly = "readonly", @pattern = "\\d*" })
+                </div>
+                <div class="account-data-input-group">
+                    <label class="account-data-label">الدرجة العلمية:</label>
+                    @Html.TextBoxFor(m => m.sntf_degree, new { @class = "account-data-input", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="account-data-input-container">
+                <div class="account-data-input-group-address">
+                    <label class="account-data-label">العنوان:</label>
+                    @Html.TextBoxFor(m => m.doc_address, new { @class = "account-data-input", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="account-data-input-container">
+                <div class="account-data-input-group">
+                    <label class="account-data-label">الكلية:</label>
+                    @Html.TextBoxFor(m => m.doc_faculty, new { @class = "account-data-input account-data-college", @readonly = "readonly" })
+                </div>
+                <div class="account-data-input-group">
+                    <label class="account-data-label">القسم:</label>
+                    @Html.TextBoxFor(m => m.doc_dept, new { @class = "account-data-input account-data-department", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="account-data-input-container">
+                <div class="account-data-input-group">
+                    <label class="account-data-label">الرقم البريدي:</label>
+                    @Html.TextBoxFor(m => m.doc_postcode, new { @class = "account-data-input", @readonly = "readonly", @pattern = "\\d*" })
+                </div>
+            </div>
+
+            <div class="account-data-submit-button-container">
+                <button type="button" onclick="makeEditable()" class="account-data-submit-button">
+                    Edit
+                </button>
+                <button type="button" onclick="goBack()" class="account-data-submit-button">
+                    Back
+                </button>
+            </div>
+
+            <button type="submit" id="submitButton" class="account-data-submit-button" style="display:none;">
+                Submit
+            </button>
+        }
+
+        <div id="popup" class="popup" style="display:none;">
+            <div class="popup-content">
+                <label>Password:</label>
+                <input type="password" id="passwordInput" class="account-data-input" />
+                <button type="button" onclick="handleConfirm()">Confirm</button>
+                <button type="button" onclick="handleCancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var editable = false;
+
+        function makeEditable() {
+            editable = true;
+            document.querySelectorAll(".account-data-input").forEach(input => input.removeAttribute("readonly"));
+            document.getElementById("submitButton").style.display = 'block';
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        document.getElementById("accountDataForm").onsubmit = function(e) {
+            if (editable) {
+                e.preventDefault();
+                document.getElementById("popup").style.display = 'block';
+            }
+        };
+
+        function handleConfirm() {
+            console.log('Password confirmed');
+            document.getElementById("popup").style.display = 'none';
+            document.getElementById("accountDataForm").submit();
+        }
+
+        function handleCancel() {
+            document.getElementById("passwordInput").value = '';
+            document.getElementById("popup").style.display = 'none';
+        }
+
+        function redirectToSettings() {
+            var userId = '@Session["userid"]';
+            window.location.href = "/Home/Doctorpdata/" + userId;
+        }
+    </script>
+</body>
+</html>

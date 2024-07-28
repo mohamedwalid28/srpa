@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "welcome";
+    bool isloggedin = true;
+    if (string.IsNullOrWhiteSpace(User.Identity.Name))
+    {
+        isloggedin = false;
+    }
+}
+
+<h2>welcome</h2>
+
+@if (isloggedin)
+{
+    @User.Identity.Name
+}

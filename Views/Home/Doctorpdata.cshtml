@@ -1,0 +1,111 @@
+﻿@using SRPA.Models
+@model Doctor
+@{
+    ViewBag.Title = "Doctor Private Data";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/styledoc.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+
+
+    <div class="accountpriv-body">
+        <div class="profile-picture-container">
+            <img class="profile-picture" src="~/images/test.jpg" alt="Profile" />
+        </div>
+
+        <form method="post" class="accountpriv-form" id="accountpriv-form">
+            <!-- Username Input -->
+            <label class="accountpriv-label">Email:</label>
+            <input type="text" value="@Model.doc_email" readonly="readonly" class="accountpriv-input" />
+
+            <!-- Password Input -->
+            <label class="accountpriv-label">Password:</label>
+            <div class="accountpriv-password-container">
+                <input type="password" value="@Model.doc_pass" readonly="readonly" id="oldPassword" class="accountpriv-input" />
+                <span onclick="showResetPasswordPopup()" class="accountpriv-change-password">Change Password</span>
+
+                <button type="submit" class="accountpriv-submit-button">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="resetPasswordPopup" class="accountpriv-popup">
+        <div class="popup-content">
+            <label>Old Password:</label>
+            <input type="password" id="resetOldPassword" />
+
+            <label>New Password:</label>
+            <input type="password" id="resetNewPassword" />
+
+            <label>Confirm Password:</label>
+            <input type="password" id="resetConfirmPassword" />
+
+            <button onclick="submitResetPasswordForm()">Submit</button>
+        </div>
+    </div>
+
+    <div id="passwordChangedPopup" class="accountpriv-popup">
+        <div class="popup-content">
+            <p>Password changed successfully!</p>
+            @Html.ActionLink("View Doctor PData", "DoctorPData", "Home", new { id = Session["userid"] }, new { @class = "btn btn-primary" })
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("resetPasswordLink").addEventListener("click", showResetPasswordPopup);
+            document.getElementById("resetPasswordForm").addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                submitResetPasswordForm();
+            });
+        });
+
+        function showResetPasswordPopup() {
+            document.getElementById("resetPasswordPopup").style.display = "block";
+        }
+
+        function submitResetPasswordForm() {
+            var oldPassword = document.getElementById("resetOldPassword").value;
+            var newPassword = document.getElementById("resetNewPassword").value;
+            var confirmPassword = document.getElementById("resetConfirmPassword").value;
+
+            // Check if passwords match
+            if (newPassword !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // Call the server-side method to validate password asynchronously
+            fetch("/Account/ValidatePassword", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ oldPassword: oldPassword, newPassword: newPassword })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById("passwordChangedPopup").style.display = "block";
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+        }
+    </script>
+
+</body>
+</html>

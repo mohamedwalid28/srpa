@@ -1,0 +1,76 @@
+﻿@using System.Collections.Generic
+@using SRPA.Models
+@model List<Research>
+
+@{
+    ViewBag.Title = "Docresearchpage";
+    var userId = Session["userid"];
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/Styleaccountpage.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+</head>
+<div class="account-page-container">
+    <div class="account-page-profile-picture-container">
+        <img class="account-page-profile-picture" src="~/uploads/images/test.jpg" alt="Profile" />
+    </div>
+
+    <div class="account-page-doctor-info">
+        <span>@Session["name"].ToString()</span>
+        <i class="fas fa-cog account-page-head-setting-gear-icon" onclick="redirectToSettings()"></i>
+    </div>
+
+    <div class="account-page-research-cards">
+        <button onclick="handleAddResearch()" class="account-page-add-research-button">
+            Add a Research
+        </button>
+
+        @foreach (var research in Model)
+        {
+            <div class="account-page-research-card">
+                <h3>@research.res_name</h3>
+                <div class="icons">
+                    <i class="fas fa-bell account-page-notification-icon" onclick="handleNotificationClick()"></i>
+                    <i class="fas fa-cog account-page-setting-gear-icon" onclick="handleSettingGearClick()"></i>
+                </div>
+            </div>
+        }
+    </div>
+    
+    <a href="/some-page" class="account-page-grey-hyperlink">
+        Go to Some Page
+    </a>
+</div>
+
+@section Scripts {
+    <script>
+    function redirectToSettings() {
+        var userid = '@userId';
+        if (userid) {
+            window.location.href = 'account/Doctordata/' + userid;
+        } else {
+            console.error('User ID not found in session.');
+        }
+    }
+        function handleAddResearch() {
+            // Logic for adding a new research
+        var userid = '@userId';
+        if (userid) {
+            window.location.href = 'Home/AddResearch/' + userid;
+        } else {
+            console.error('User ID not found in session.');
+        }
+        }
+
+        function handleNotificationClick() {
+            // Logic for handling notification icon click
+        }
+
+        function handleSettingGearClick() {
+            // Logic for handling setting gear icon click
+        }
+    </script>
+}

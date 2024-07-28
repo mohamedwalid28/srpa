@@ -1,0 +1,152 @@
+﻿@**using SRPA.Models
+    @model Research
+
+    @{
+        ViewData["Title"] = "Add a Research";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <head>
+        <link rel="stylesheet" href="~/Content/Styleresearch.css" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+
+    <div class="AddResearch-body">
+
+        @using (Html.BeginForm("AddResearch", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "AddResearch-form", id = "researchForm" }))
+    {-->
+            <!-- File Upload Input -->
+            <!--<label class="AddResearch-label">Upload PDF:</label>
+            <div class="AddResearch-upload-container">
+                <input type="file" name="uploadedFile" accept="application/pdf" class="AddResearch-input-file" />
+                <span class="AddResearch-upload-icon">📄</span>
+                <span class="AddResearch-upload-text" onclick="triggerFileInput()">Upload here</span>-->
+                <!-- Other input fields if any -->
+
+                <!--<button type="button" onclick="window.history.back()" class="AddResearch-back-button">Back</button>
+                <input type="submit" value="Submit" class="AddResearch-submit-button"/>
+            </div>
+    }
+
+        @if (ViewData.ModelState.IsValid == false)
+    {
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                </ul>
+            </div>
+    }
+
+        <h2 class="AddResearch-headline">Important Information</h2>
+        <ul class="AddResearch-list">
+            <li>Bullet item 1</li>
+            <li>Bullet item 2</li>
+            <li>Bullet item 3</li>
+        </ul>
+    </div>
+
+
+    @section Scripts {
+        <script>
+
+            function triggerFileInput() {
+                console.log('triggerFileInput() function called');
+                const fileInput = document.querySelector('.AddResearch-input-file');
+                console.log('triggerFileInput() function called twice');
+                fileInput.click(); // Trigger the file input dialog
+            }
+
+            // Form submission event handler
+            $(document).ready(function() {
+                $('#researchForm').submit(function(event) {
+                    console.log('Form submitted');
+                    // You can add additional logic here if needed
+                });
+            });
+        </script>
+    }--> *@
+@using SRPA.Models
+@model Doctor
+@{
+    ViewData["Title"] = "Add a Research";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var userId = Session["userid"];
+
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/Styleresearch.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+ 
+<div class="registerpage_form-container">
+
+    <div class="add-research-p1-main_container>
+        <div class="add-research-p1-container">
+            @using (Html.BeginForm("AddResearch", "Home", FormMethod.Post, new { id = "form1", @class = "add-research-p1_form" }))
+            {
+                @Html.AntiForgeryToken()
+                <p class="registerpage_form-title">Create An Account</p>
+
+                <div>
+                    <label class="registerpage_label" for="doc_nid">National ID:</label>
+                    @Html.TextBoxFor(m => m.doc_name, new { id = "doc_nid", @class = "registerpage_input", @readonly = "readonly", value = Model.doc_name })
+                    @Html.ValidationMessageFor(m => m.doc_name, "", new { @class = "registerpage_validation-message" })
+                </div>
+                <div>
+                    <label class="registerpage_label" for="doc_nid">National ID:</label>
+                    @Html.TextBoxFor(m => m.doc_nid, new { id = "doc_nid", @class = "registerpage_input", @readonly = "readonly", value = Model.doc_nid })
+                    @Html.ValidationMessageFor(m => m.doc_nid, "", new { @class = "registerpage_validation-message" })
+                </div>
+                <div>
+                    <label class="registerpage_label" for="doc_nid">National ID:</label>
+                    @Html.TextBoxFor(m => m.doc_address, new { id = "doc_nid", @class = "registerpage_input", @readonly = "readonly", value = Model.doc_address })
+                    @Html.ValidationMessageFor(m => m.doc_address, "", new { @class = "registerpage_validation-message" })
+                </div>
+                <div>
+                    <label class="registerpage_label" for="doc_nid">National ID:</label>
+                    @Html.TextBoxFor(m => m.doc_phoneno, new { id = "doc_nid", @class = "registerpage_input", @readonly = "readonly", value = Model.doc_phoneno })
+                    @Html.ValidationMessageFor(m => m.doc_phoneno, "", new { @class = "registerpage_validation-message" })
+                </div>
+                <div>
+                    <label class="registerpage_label" for="doc_nid">National ID:</label>
+                    @Html.TextBoxFor(m => m.doc_postcode, new { id = "doc_nid", @class = "registerpage_input", @readonly = "readonly", value = Model.doc_postcode })
+                    @Html.ValidationMessageFor(m => m.doc_postcode, "", new { @class = "registerpage_validation-message" })
+                </div>
+                <div>
+                    <label class="registerpage_label" for="doc_nid">National ID:</label>
+                    @Html.TextBoxFor(m => m.sntf_degree, new { id = "doc_nid", @class = "registerpage_input", @readonly = "readonly", value = Model.sntf_degree })
+                    @Html.ValidationMessageFor(m => m.sntf_degree, "", new { @class = "registerpage_validation-message" })
+                </div>
+                <div>
+                    <label class="registerpage_label" for="doc_nid">National ID:</label>
+                    @Html.TextBoxFor(m => m.doc_faculty, new { id = "doc_nid", @class = "registerpage_input", @readonly = "readonly", value = Model.doc_faculty })
+                    @Html.ValidationMessageFor(m => m.doc_faculty, "", new { @class = "registerpage_validation-message" })
+                </div>
+
+                <div>
+                    <label class="registerpage_label" for="doc_nid">National ID:</label>
+                    @Html.TextBoxFor(m => m.doc_dept, new { id = "doc_nid", @class = "registerpage_input", @readonly = "readonly", value = Model.doc_dept })
+                    @Html.ValidationMessageFor(m => m.doc_dept, "", new { @class = "registerpage_validation-message" })
+                </div>
+
+                <div>
+                    <label class="registerpage_label" for="doc_email">Email:</label>
+                    @Html.TextBoxFor(m => m.doc_email, new { id = "doc_email", @class = "registerpage_input", @readonly = "readonly", value = Model.doc_email })
+                    @Html.ValidationMessageFor(m => m.doc_email, "", new { @class = "registerpage_validation-message" })
+                </div>
+
+
+                <div class="registerpage_button-container">
+                    <button type="button" class="add-research-p1-back-button"></button>
+                    <button type="button" class="add-research-p1-button" onclick="nextForm()">Next</button>
+                </div>
+            }
+        </div>
+    
+    </div>
+
+        </div>

@@ -1,0 +1,162 @@
+﻿@model SRPA.Models.Doctor
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Account</title>
+    <link rel="stylesheet" type="text/css" href="~/content/registerpage.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.7/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>
+    <div class="registerpage_form-container">
+        <div class="registerpage_progress-bar-container">
+            <div class="registerpage_progress-bar" id="progressBar">50%</div>
+        </div>
+
+        <div class="registerpage_main-container">
+            <!-- Form Part 1 -->
+            <div class="registerpage_form-part registerpage_active" id="form-part-1">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "form1", @class = "registerpage_form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <p class="registerpage_form-title">Create An Account</p>
+                    <div>
+                        <label class="registerpage_label" for="doc_nid">National ID:</label>
+                        @Html.TextBoxFor(m => m.doc_nid, new { id = "doc_nid", @class = "registerpage_input", Name = "doc_nid" })
+                        @Html.ValidationMessageFor(m => m.doc_nid, "", new { @class = "registerpage_validation-message" })
+                    </div>
+                    <div>
+                        <label class="registerpage_label" for="doc_email">Email:</label>
+                        @Html.TextBoxFor(m => m.doc_email, new { id = "doc_email", @class = "registerpage_input", Name = "doc_email" })
+                        @Html.ValidationMessageFor(m => m.doc_email, "", new { @class = "registerpage_validation-message" })
+                    </div>
+
+                    <div class="registerpage_button-container">
+                        <button type="button" class="registerpage_button" onclick="nextForm()">Next</button>
+                    </div>
+                }
+            </div>
+
+            <!-- Form Part 2 -->
+            <div class="registerpage_form-part" id="form-part-2">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "form2", @class = "registerpage_form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    @*@Html.HiddenFor(m => m.doc_nid, new { id = "doc_nid_form2" })
+            @Html.HiddenFor(m => m.doc_email, new { id = "doc_email_form2" })*@
+
+                    @Html.HiddenFor(m => m.doc_nid, new { id = "hidden_doc_nid" })
+                    @Html.HiddenFor(m => m.doc_email, new { id = "hidden_doc_email" })
+
+
+
+                    @*<div class="registerpage_div">*@
+                    <label class="registerpage_label" for="doc_pass">Password:</label>
+                    <div class="registerpage_input-container">
+                        @Html.PasswordFor(m => m.doc_pass, new { id = "doc_pass", @class = "registerpage_input" })
+                        @Html.ValidationMessageFor(m => m.doc_pass, "", new { @class = "registerpage_validation-message" })
+                    </div>
+                    @*</div>*@
+                    @*<div>*@
+                    @*<label class="registerpage_label" for="ConfirmPassword">Confirm Password:</label>
+            <div class="registerpage_input-container">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { id = "ConfirmPassword", @class = "registerpage_input" })
+                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "registerpage_validation-message" })
+            </div>*@
+                    @*</div>*@
+                    <div>
+                        <label class="registerpage_label" for="doc_name">Name:</label>
+                        @Html.TextBoxFor(m => m.doc_name, new { id = "doc_name", @class = "registerpage_input" })
+                        @Html.ValidationMessageFor(m => m.doc_name, "", new { @class = "registerpage_validation-message" })
+                    </div>
+                    <div>
+                        <label class="registerpage_label" for="doc_phoneno">Phone Number:</label>
+                        @Html.TextBoxFor(m => m.doc_phoneno, new { id = "doc_phoneno", @class = "registerpage_input" })
+                        @Html.ValidationMessageFor(m => m.doc_phoneno, "", new { @class = "registerpage_validation-message" })
+                    </div>
+                    <div>
+                        <label class="registerpage_label" for="doc_address">Address:</label>
+                        @Html.TextBoxFor(m => m.doc_address, new { id = "doc_address", @class = "registerpage_input" })
+                        @Html.ValidationMessageFor(m => m.doc_address, "", new { @class = "registerpage_validation-message" })
+                    </div>
+                    <div>
+                        <label class="registerpage_label" for="doc_postcode">Postcode:</label>
+                        @Html.TextBoxFor(m => m.doc_postcode, new { id = "doc_postcode", @class = "registerpage_input" })
+                        @Html.ValidationMessageFor(m => m.doc_postcode, "", new { @class = "registerpage_validation-message" })
+                    </div>
+                    <div>
+                        <label class="registerpage_label" for="doc_faculty">Faculty:</label>
+                        @Html.TextBoxFor(m => m.doc_faculty, new { id = "doc_faculty", @class = "registerpage_input" })
+                        @Html.ValidationMessageFor(m => m.doc_faculty, "", new { @class = "registerpage_validation-message" })
+                    </div>
+                    <div>
+                        <label class="registerpage_label" for="doc_dept">Department:</label>
+                        @Html.TextBoxFor(m => m.doc_dept, new { id = "doc_dept", @class = "registerpage_input" })
+                        @Html.ValidationMessageFor(m => m.doc_dept, "", new { @class = "registerpage_validation-message" })
+                    </div>
+                    <div>
+                        <label class="registerpage_label" for="sntf_degree">SNTF Degree:</label>
+                        @Html.TextBoxFor(m => m.sntf_degree, new { id = "sntf_degree", @class = "registerpage_input" })
+                        @Html.ValidationMessageFor(m => m.sntf_degree, "", new { @class = "registerpage_validation-message" })
+                    </div>
+
+                    <div class="registerpage_button-container">
+                        <button type="button" class="registerpage_button" onclick="prevForm()">Back</button>
+                        <button type="submit" class="registerpage_button">Submit</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+        function nextForm() {
+
+            var docNidFields = document.getElementsByName("doc_nid");
+                var docNidValue = docNidFields[0].value;
+                console.log("Value of doc_nid:", docNidValue);
+           
+            var docEmailFields = document.getElementsByName("doc_email");
+                var docEmailValue = docEmailFields[0].value;
+                console.log("Value of doc_email:", docEmailValue);
+            document.getElementById("hidden_doc_nid").value = docNidValue;
+            document.getElementById("hidden_doc_email").value = docEmailValue;
+
+
+
+            // Hide form part 1 and show form part 2
+            $('#form-part-1').removeClass('registerpage_active').addClass('registerpage_hidden');
+            $('#form-part-2').removeClass('registerpage_hidden').addClass('registerpage_active');
+            updateProgressBar(100);
+        }
+
+
+        function prevForm() {
+            document.getElementById("form-part-2").classList.remove("registerpage_active");
+            document.getElementById("form-part-2").classList.add("registerpage_hidden");
+
+            setTimeout(function () {
+                document.getElementById("form-part-1").classList.remove("registerpage_hidden");
+                document.getElementById("form-part-1").classList.add("registerpage_active");
+                updateProgressBar(50);
+            }, 500);
+        }
+
+        function updateProgressBar(progress) {
+            var progressBar = document.getElementById("progressBar");
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = progress + '%';
+        }
+
+        $(function () {
+            // Enable jQuery validation
+            $.validator.unobtrusive.parse($("form"));
+        });
+    </script>
+</body>
+</html>
